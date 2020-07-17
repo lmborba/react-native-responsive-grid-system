@@ -1,4 +1,4 @@
-import {useDimensions} from "react-native-responsive-ui";
+import {useDimensions} from 'react-native-responsive-ui';
 
 const LG_WIDTH = 1024;
 const MD_WIDTH = 768;
