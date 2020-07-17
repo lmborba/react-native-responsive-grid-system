@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
-import {useDimensions, ResponsiveComponent} from 'react-native-responsive-ui';
+import { ResponsiveComponent } from 'react-native-responsive-ui';
 import styles from './styles';
-import {currentSize} from './utils';
+import {widthToSize} from './utils';
 
 class Col extends ResponsiveComponent {
   
   constructor(props) {
-    super(props);
+    super(props); 
   }
 
   render() {
     const {children, style} = this.props;
-    const {width} = this.props.state.window;
+    const {width} = this.state.window;
 
     const size = this.props[widthToSize(width)];
         
