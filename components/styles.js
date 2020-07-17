@@ -1,3 +1,5 @@
+import {queryFromCode} from './utils';
+
 let colWidth = 100 / 12;
 
 const styles = staticStyle = [
