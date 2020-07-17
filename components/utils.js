@@ -5,7 +5,7 @@ const MD_WIDTH = 768;
 const SM_WIDTH = 418;
 const XS_WIDTH = 0;
 
-export const widthToSize (width) =>  {
+export const widthToSize = (width) =>  {
   if (width >= LG_WIDTH) {
     return 'lg';
   } else if (width >= MD_WIDTH) {
