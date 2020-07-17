@@ -1,0 +1,4 @@
+let xs = width > 0 && width < 418;
+let sm = width > 417 && width < 768;
+let md = width > 767 && width < 1024;
+let lg = width > 1023;

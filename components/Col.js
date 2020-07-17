@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import styles from 'react-native-responsive-grid-styles'
+import {useDimensions, ResponsiveComponent} from 'react-native-responsive-ui';
+import styles from './styles';
+import {currentSize} from './utils';
 
-class Col extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state= {
-            styles: styles
-        }
-      }
+class Col extends ResponsiveComponent {
+  
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        const {children, xs, sm, md, lg, colStyles} = this.props;
-        const {styles} = this.state;
-        var columns_xs = 'col_' + xs;
-        var columns_sm = 'col_sm_' + sm;
-        var columns_md = 'col_md_' + md;
-        var columns_lg = 'col_lg_' + lg;
+  render() {
+    const {children, style} = this.props;
+    const {width} = this.props.state.window;
 
-        return (
-            <View style={[styles[columns_xs],styles[columns_sm],styles[columns_md],styles[columns_lg],colStyles]}>
-                { children }
-            </View>
-        )
-    }
+    const size = this.props[widthToSize(width)];
+        
+    var columns = 'col_' + size;
+
+    return (
+      <View style={[styles[columns],style]}>
+        { children }
+      </View>
+    );
+  }
 }
 
 export default Col;

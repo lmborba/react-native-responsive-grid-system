@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import styles from 'react-native-responsive-grid-styles'
+import styles from './styles';
+import {ResponsiveComponent} from 'react-native-responsive-ui';
 
-class Row extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state= {}
-      }
+class Row extends ResponsiveComponent {
+  
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        const {children, rowStyles} = this.props;
+  render() {
+    const {children, rowStyles} = this.props;
 
-        return (
-            <View style={[styles.row, rowStyles]}>
-                { children }
-            </View>
-        )
-    }
+    return (
+      <View style={[styles.row, rowStyles]}>
+        { children }
+      </View>
+    );
+  }
 }
 
 export default Row;
