@@ -15,8 +15,6 @@ export const widthToSize = (width) =>  {
   } else {
     return 'xs';
   }
-    
-  return children;
 };
 
 const queries = {
