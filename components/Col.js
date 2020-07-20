@@ -21,6 +21,9 @@ class Col extends ResponsiveComponent {
 
     const styleResp = this.style[columns];
 
+    console.log(columns);
+    console.log(styleResp);
+
     return (
       <View style={[styleResp,style]}>
         { children }

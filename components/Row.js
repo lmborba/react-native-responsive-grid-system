@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import styles from './styles';
-import {ResponsiveComponent} from 'react-native-responsive-ui';
+import {ResponsiveComponent, ResponsiveStyleSheet} from 'react-native-responsive-ui';
 
 class Row extends ResponsiveComponent {
   
@@ -13,11 +13,17 @@ class Row extends ResponsiveComponent {
     const {children, rowStyles} = this.props;
 
     return (
-      <View style={[styles.row, rowStyles]}>
+      <View style={[this.style.row, rowStyles]}>
         { children }
       </View>
     );
   }
+
+  get style() {
+    return ResponsiveStyleSheet.select(
+      styles
+    );
+  };
 }
 
 export default Row;
