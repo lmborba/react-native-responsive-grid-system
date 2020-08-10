@@ -12,6 +12,7 @@ class Row extends ResponsiveComponent {
   render() {
     const {children, rowStyles} = this.props;
 
+    console.log('style',this.style);
     return (
       <View style={[this.style.row, rowStyles]}>
         { children }
@@ -20,6 +21,7 @@ class Row extends ResponsiveComponent {
   }
 
   get style() {
+    if (!ResponsiveStyleSheet) return {};
     return ResponsiveStyleSheet.select(
       styles
     );

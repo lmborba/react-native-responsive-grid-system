@@ -40,6 +40,7 @@ class Col extends ResponsiveComponent {
   }
 
   get style() {
+    if (!ResponsiveStyleSheet) return {};
     return ResponsiveStyleSheet.select(
       styles
     );
